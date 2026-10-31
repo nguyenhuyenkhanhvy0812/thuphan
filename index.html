@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gửi anh iu 💗 5 tháng yêu nhau</title>
+<meta name="theme-color" content="#ffd9e4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Pacifico&family=Mali:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--cherry:#d8284f;--deep:#a3122f;--pink:#ffb8cd;--blush:#ffe3ec;--cream:#fff8f0;--ink:#7a2236;
+--round:'Baloo 2','Nunito','Segoe UI',system-ui,sans-serif;--hand:'Pacifico','Brush Script MT',cursive;--note:'Mali','Comic Sans MS',cursive}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;margin:0}
+body{font-family:var(--round);color:var(--ink);background:radial-gradient(circle at 20% 10%,#fff 0,transparent 40%),radial-gradient(circle at 85% 90%,#ffd0de 0,transparent 45%),linear-gradient(160deg,var(--blush),var(--cream));overflow:hidden}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(#ffb8cd66 2px,transparent 2.5px) 0 0/26px 26px;pointer-events:none}
+@media(hover:hover){body{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28'%3E%3Ctext y='22' font-size='22'%3E🎀%3C/text%3E%3C/svg%3E") 4 4,auto}button,.tap{cursor:pointer}}
+button{font-family:inherit}
+
+/* ===== màn hình ===== */
+.screen{position:fixed;inset:0;overflow-y:auto;display:flex;flex-direction:column;align-items:center;padding:calc(env(safe-area-inset-top,0px) + 18px) 14px calc(env(safe-area-inset-bottom,0px) + 22px);opacity:0;visibility:hidden;transform:scale(.96);transition:opacity .5s,transform .5s,visibility .5s;z-index:2}
+.screen.on{opacity:1;visibility:visible;transform:none}
+.wrap{width:100%;max-width:560px;margin:auto;text-align:center}
+h1,h2{font-weight:800;line-height:1.1;margin:0 0 8px;color:var(--cherry)}
+.hand{font-family:var(--hand);font-weight:400}
+.sub{margin:0 0 16px;font-size:1.05rem;opacity:.85}
+.foot{margin-top:18px;font-family:var(--hand);font-size:.95rem;color:var(--cherry);opacity:.8;text-align:center}
+.btn{border:0;border-radius:999px;padding:12px 26px;font-size:1.05rem;font-weight:800;color:#fff;background:linear-gradient(180deg,#ef4a6f,var(--cherry));box-shadow:0 5px 0 var(--deep),0 10px 18px #d8284f44;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px) scale(1.04)}.btn:active{transform:translateY(4px);box-shadow:0 1px 0 var(--deep)}
+.back{align-self:flex-start;margin:0 auto 10px;width:100%;max-width:560px;text-align:left}
+.back button{border:2px dashed var(--cherry);background:#fff9;color:var(--cherry);border-radius:999px;padding:6px 16px;font-weight:700;font-size:.95rem}
+:focus-visible{outline:3px solid var(--cherry);outline-offset:3px}
+
+/* ===== trái tim bay nền & hiệu ứng ===== */
+#bg{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.fh{position:absolute;bottom:-40px;opacity:0;animation:rise linear infinite}
+@keyframes rise{0%{transform:translateY(0) rotate(-10deg);opacity:0}10%{opacity:.55}90%{opacity:.4}100%{transform:translateY(-110vh) rotate(14deg);opacity:0}}
+.pop{position:fixed;pointer-events:none;z-index:99;font-size:22px;animation:burst 1.1s ease-out forwards}
+@keyframes burst{0%{transform:translate(-50%,-50%) scale(.3);opacity:1}100%{transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) scale(1.2) rotate(var(--rot));opacity:0}}
+
+/* ===== 1. Phong bì mở đầu ===== */
+#intro{justify-content:center;text-align:center}
+#intro h1{font-size:clamp(2rem,9vw,3.2rem)}
+.env{position:relative;width:250px;height:165px;margin:22px auto 34px}
+.env>div{position:absolute;inset:0;border-radius:10px}
+.eb{background:#ffc6d6;box-shadow:0 14px 26px #d8284f33}
+.el{inset:8px 14px 8px!important;background:var(--cream)!important;z-index:2;display:flex;align-items:center;justify-content:center;font-family:var(--hand);color:var(--cherry);transition:transform .8s .5s cubic-bezier(.2,1.4,.5,1);padding:6px;font-size:.95rem}
+.ep{z-index:3;background:linear-gradient(#ffd6e2,#ffb8cd);clip-path:polygon(0 0,50% 58%,100% 0,100% 100%,0 100%)}
+.ef{z-index:4;height:62%!important;background:linear-gradient(#ff8fae,#ff9db7);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .6s}
+.seal{position:absolute;left:50%;top:48%;width:46px;height:46px;margin:-23px;z-index:5;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff6b8a,var(--deep));display:grid;place-items:center;font-size:22px;box-shadow:0 3px 8px #0003;transition:opacity .3s;animation:beat 1.4s infinite}
+@keyframes beat{50%{transform:scale(1.12)}}
+.env.open .ef{transform:rotateX(180deg);z-index:1}.env.open .seal{opacity:0}.env.open .el{transform:translateY(-62px)}
+.spk{position:absolute;color:#ffc94d;animation:tw 1.8s infinite}@keyframes tw{50%{transform:scale(1.5) rotate(20deg);opacity:.4}}
+
+/* ===== 2. Màn chọn nơ ===== */
+.card{position:relative;background:#fffdf8;border:3px solid #fff;border-radius:30px;padding:26px 16px 22px;box-shadow:0 0 0 4px var(--pink),0 18px 40px #d8284f33}
+.corner{position:absolute;width:54px;transform:rotate(-18deg);top:-20px;left:-14px}
+.corner.r{left:auto;right:-14px;transform:rotate(18deg) scaleX(-1)}
+.card h2{font-size:clamp(1.35rem,6vw,1.9rem);padding:0 24px}
+.bows{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 8px;margin-top:6px}
+.bowbtn{background:none;border:0;padding:6px;width:31%;min-width:96px;color:var(--ink);font-weight:700;font-size:.92rem;line-height:1.15}
+.bowbtn svg{width:100%;max-width:104px;filter:drop-shadow(0 6px 6px #a3122f44);animation:sway 3s ease-in-out infinite}
+.bowbtn:nth-child(2) svg{animation-delay:-1s}.bowbtn:nth-child(3) svg{animation-delay:-2s}
+@keyframes sway{50%{transform:rotate(5deg) scale(1.04)}}
+.bowbtn:hover svg,.bowbtn:focus-visible svg{animation:wig .5s infinite;transform:scale(1.18)}
+@keyframes wig{25%{transform:rotate(-9deg) scale(1.18)}75%{transform:rotate(9deg) scale(1.18)}}
+.bowbtn span{display:block;margin-top:2px}
+
+/* ===== 3. Ôm ===== */
+.hugbox{position:relative;display:inline-block;margin:6px 0 14px;user-select:none}
+.hug{display:block;width:min(78vw,340px);aspect-ratio:1;border-radius:28px;border:6px solid var(--pink);background:#fff;box-shadow:0 14px 30px #d8284f44;animation:bob 3.2s ease-in-out infinite}
+.hugbox.b .hug{animation:squish .5s}
+@keyframes bob{50%{transform:translateY(-8px) rotate(.8deg)}}@keyframes squish{40%{transform:scale(1.08,.94)}70%{transform:scale(.97,1.04)}}
+.bubble{display:inline-block;background:#fff;border:3px solid var(--pink);border-radius:22px;padding:12px 18px;font-family:var(--note);font-weight:600;font-size:1.12rem;color:var(--cherry);box-shadow:0 5px 0 var(--pink)}
+.small{font-family:var(--note);margin-top:12px;font-size:.95rem}
+
+/* ===== 4. Album ===== */
+.scrap{background:#fffdf8;background-image:repeating-linear-gradient(transparent 0 27px,#ffd3de66 27px 28px);border-radius:26px;padding:20px 14px 18px;border:3px dashed var(--pink);box-shadow:0 14px 30px #d8284f26}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 12px;margin:14px 0 8px;align-items:start}
+.pol{position:relative;background:#fff;padding:8px 8px 30px;border-radius:6px;box-shadow:0 6px 14px #a3122f33;transform:rotate(var(--r));opacity:0;transition:transform .25s}
+.on .pol{animation:drop .7s both var(--d)}
+@keyframes drop{from{opacity:0;transform:translateY(-30px) rotate(calc(var(--r) * 4)) scale(.8)}to{opacity:1;transform:rotate(var(--r))}}
+.pol:hover{transform:rotate(0) scale(1.05);z-index:3}
+.pol::before{content:"";position:absolute;top:-10px;left:50%;width:58px;height:20px;margin-left:-29px;background:repeating-linear-gradient(45deg,#ffb8cdcc 0 6px,#fff0 6px 12px),#ffe3ecbb;transform:rotate(-4deg);border-radius:3px}
+.ph{position:relative;aspect-ratio:var(--ar,1);border-radius:4px;overflow:hidden;background:linear-gradient(135deg,#ffe3ec,#ffd0de);display:grid;place-items:center;font-size:.8rem;line-height:1.3;color:var(--cherry);font-weight:700;padding:6px}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ph i{font-style:normal;font-size:2rem;display:block}
+.cap{position:absolute;left:0;right:0;bottom:5px;font-family:var(--hand);font-size:.82rem;color:var(--cherry)}
+.stk{display:inline-block;margin:6px 4px;padding:5px 13px;border-radius:999px;background:var(--cherry);color:#fff;font-family:var(--note);font-weight:600;font-size:.85rem;transform:rotate(var(--r));box-shadow:0 3px 0 var(--deep);border:0}
+.stk.w{background:#fff;color:var(--cherry);border:2px solid var(--cherry);box-shadow:0 3px 0 var(--pink)}
+
+/* ===== 5. Thiệp ===== */
+.mail{position:relative;width:250px;height:165px;margin:30px auto 18px}
+.mail .env{margin:0}
+.letter{display:none;position:relative;background:#fffdf8;background-image:repeating-linear-gradient(transparent 0 31px,#ffc6d68c 31px 32px);border-radius:8px;padding:30px 20px 24px;text-align:left;font-family:var(--note);font-size:1.02rem;line-height:32px;box-shadow:0 0 0 6px #fff,0 0 0 9px var(--pink),0 18px 36px #d8284f40;transform-origin:top center}
+.letter.show{display:block;animation:unfold .9s cubic-bezier(.2,1.1,.4,1)}
+@keyframes unfold{from{opacity:0;transform:translateY(40px) scaleY(.1)}to{opacity:1;transform:none}}
+.letter p{margin:0 0 32px}.letter .to{font-weight:600;color:var(--cherry);font-size:1.08rem}.letter .sg{font-family:var(--hand);color:var(--cherry);text-align:right;margin:0;line-height:1.6}
+.letter .tl{position:absolute;top:-24px;right:-8px;width:60px;transform:rotate(14deg)}
+.letter .stamp{position:absolute;top:10px;right:12px;font-size:1.6rem;transform:rotate(10deg);opacity:.9}
+.letter .big{font-weight:600;color:var(--cherry)}
+.hint{font-family:var(--note);margin:10px 0 0}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01s!important;animation-iteration-count:1!important;transition-duration:.01s!important}}
+</style>
+</head>
+<body>
+
+<!-- Nơ cherry dùng chung (SVG) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff6b8a"/><stop offset="1" stop-color="#c81e44"/></linearGradient></defs>
+<symbol id="bow" viewBox="0 0 100 82">
+<path d="M46 48 28 78l15-6 8-18Z M54 48l18 30-15-6-8-18Z" fill="#c81e44" stroke="#a3122f" stroke-width="2.5" stroke-linejoin="round"/>
+<path d="M50 40C40 8 6 4 7 34c1 28 33 24 43 6Z M50 40C60 8 94 4 93 34c-1 28-33 24-43 6Z" fill="url(#g)" stroke="#a3122f" stroke-width="2.5" stroke-linejoin="round"/>
+<path d="M16 22c6-6 14-6 20-2M84 22c-6-6-14-6-20-2" stroke="#fff" stroke-width="3" stroke-linecap="round" fill="none" opacity=".7"/>
+<ellipse cx="50" cy="42" rx="10" ry="11" fill="#e23a5e" stroke="#a3122f" stroke-width="2.5"/>
+</symbol></svg>
+
+<div id="bg"></div>
+
+<!-- ============ MÀN HÌNH MỞ ĐẦU ============ -->
+<section class="screen on" id="intro" aria-label="Mở đầu">
+ <div class="wrap">
+  <h1>HELLOOO, ANH IU CỦA EM 💗</h1>
+  <p class="sub">Có một chiếc thế giới bé xíu được làm riêng cho anh nè!</p>
+  <div class="env" id="env1" aria-hidden="true">
+   <div class="eb"></div><div class="el">gửi anh iu 💌</div><div class="ep"></div><div class="ef"></div><span class="seal">💗</span>
+   <span class="spk" style="left:-26px;top:-8px">✦</span><span class="spk" style="right:-22px;top:20px;animation-delay:-.6s">✧</span><span class="spk" style="left:-14px;bottom:-14px;animation-delay:-1.2s">✦</span><span class="spk" style="right:-26px;bottom:-4px;animation-delay:-.3s">✧</span>
+  </div>
+  <button class="btn" id="openGift">MỞ QUÀ CỦA EM 🎀</button>
+ </div>
+</section>
+
+<!-- ============ MÀN CHỌN 3 NƠ ============ -->
+<section class="screen" id="home" aria-label="Chọn nơ">
+ <div class="wrap">
+  <div class="card">
+   <svg class="corner"><use href="#bow"/></svg><svg class="corner r"><use href="#bow"/></svg>
+   <h2>ANH IU ƠI, CHỌN MỘT CHIẾC NƠ ĐI NÈ 🎀</h2>
+   <p class="sub">Mỗi chiếc nơ là một điều nhỏ xíu em muốn dành cho anh.</p>
+   <div class="bows">
+    <button class="bowbtn" data-go="v1"><svg viewBox="0 0 100 82"><use href="#bow"/></svg><span>ÔM ANH MỘT CÁI 💞</span></button>
+    <button class="bowbtn" data-go="v2"><svg viewBox="0 0 100 82"><use href="#bow"/></svg><span>GÓC NHỎ CỦA HAI ĐỨA 📸</span></button>
+    <button class="bowbtn" data-go="v3"><svg viewBox="0 0 100 82"><use href="#bow"/></svg><span>THIỆP KỶ NIỆM 5 THÁNG 💌</span></button>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ============ NƠ 1: ÔM ANH MỘT CÁI ============ -->
+<section class="screen" id="v1" aria-label="Ôm anh một cái">
+ <div class="back"><button data-go="home">← Về chỗ ba chiếc nơ</button></div>
+ <div class="wrap">
+  <h2 class="hand" style="font-size:1.7rem">Ôm anh một cái 💞</h2>
+  <p class="sub">Chạm vào hai đứa mình nhaaa</p>
+  <div class="hugbox tap" id="hugbox">
+   <!-- ẢNH Ô NƠ SỐ 1: thay file images/hug.jpg bằng hình khác nếu muốn -->
+   <img class="hug" src="images/hug.jpg" alt="Hai bạn mèo đang ôm nhau" onerror="this.replaceWith(document.getElementById('fb').content.cloneNode(true))">
+  </div>
+  <div><div class="bubble">Ước gì giờ này được ôm anh một cái thiệt lâu áaa 🥺💗</div></div>
+  <p class="small">Ôm online trước nha, ôm ngoài đời tính sau hehe!</p>
+ </div>
+</section>
+
+<!-- ============ NƠ 2: ALBUM ============ -->
+<section class="screen" id="v2" aria-label="Album ảnh">
+ <div class="back"><button data-go="home">← Về chỗ ba chiếc nơ</button></div>
+ <div class="wrap">
+  <div class="scrap">
+   <h2 style="font-size:clamp(1.4rem,6vw,1.9rem)">PHOTO DUMP CỦA EM VÀ ANH IU 📷💗</h2>
+   <p class="sub">Không cần ảnh hoàn hảo, chỉ cần trong ảnh có chúng mình.</p>
+   <!-- ĐỔI ẢNH: bỏ ảnh thật vào thư mục images/ với đúng tên couple1.jpg ... couple4.jpg
+        Chưa có ảnh thì khung mẫu sẽ tự hiện. Sửa chữ viết tay ở class="cap" -->
+   <div class="grid">
+    <div class="pol tap" style="--r:-3deg;--d:.1s"><div class="ph" style="--ar:4/5"><div><i>🧸</i>couple1.jpg<br>ảnh của hai đứa</div><img src="images/couple1.jpg" alt="Ảnh cặp đôi 1" onerror="this.remove()"></div><div class="cap">lần đầu mình đi chơi 🎀</div></div>
+    <div class="pol tap" style="--r:2.5deg;--d:.3s;margin-top:18px"><div class="ph" style="--ar:1"><div><i>🌸</i>couple2.jpg<br>ảnh của hai đứa</div><img src="images/couple2.jpg" alt="Ảnh cặp đôi 2" onerror="this.remove()"></div><div class="cap">cười hết nấc luôn 🥹</div></div>
+    <div class="pol tap" style="--r:2deg;--d:.5s"><div class="ph" style="--ar:1"><div><i>💌</i>couple3.jpg<br>ảnh của hai đứa</div><img src="images/couple3.jpg" alt="Ảnh cặp đôi 3" onerror="this.remove()"></div><div class="cap">my favorite day ♡</div></div>
+    <div class="pol tap" style="--r:-2.5deg;--d:.7s;margin-top:-8px"><div class="ph" style="--ar:4/5"><div><i>⭐</i>couple4.jpg<br>ảnh của hai đứa</div><img src="images/couple4.jpg" alt="Ảnh cặp đôi 4" onerror="this.remove()"></div><div class="cap">5 tháng rồi nè 💗</div></div>
+   </div>
+   <div>
+    <button class="stk" style="--r:-4deg">my favorite person</button><button class="stk w" style="--r:3deg">u + me = ♡</button><button class="stk" style="--r:-2deg">little moments, big love</button>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ============ NƠ 3: THIỆP ============ -->
+<section class="screen" id="v3" aria-label="Thiệp kỷ niệm">
+ <div class="back"><button data-go="home">← Về chỗ ba chiếc nơ</button></div>
+ <div class="wrap">
+  <div id="mailWrap">
+   <h2 class="hand" style="font-size:1.7rem">Có thư cho anh nè 💌</h2>
+   <div class="mail"><div class="env tap" id="env3" role="button" tabindex="0" aria-label="Mở thư"><div class="eb"></div><div class="el">5 tháng 💗</div><div class="ep"></div><div class="ef"></div><span class="seal">🎀</span></div></div>
+   <p class="hint">Chạm vào phong bì để mở thư nha</p>
+  </div>
+  <article class="letter" id="letter">
+   <svg class="tl"><use href="#bow"/></svg><span class="stamp">💗</span>
+   <!-- NỘI DUNG THƯ: sửa chữ ở đây -->
+   <p class="to">💌 TO: ANH IU KHƯU PHÙNG QUANG</p>
+   <p class="big">HAPPY 5 MONTHS CỦA CHÚNG MÌNH RỒIIII! 🎀💗</p>
+   <p>Vậy là em với anh đã bên nhau được 5 tháng rồi đóoo. Nghe thì hong quá dài, nhưng cũng đủ để anh trở thành một chiếc người đặc biệt trong thế giới của em rùiii. 🥹💕</p>
+   <p>Cảm ơn anh vì đã xuất hiện, vì những lúc quan tâm em, những cuộc trò chuyện linh tinh, có anh nên em vui và hạnh phúc hơn hẳn. Em mong tụi mình sẽ có thật nhiều kỷ niệm dù có vui hay buồn, hai đứa vẫn sẽ hiểu nhau hơn và cùng nhau cố gắng.</p>
+   <p>Chúc anh iu của em luôn vui vẻ, khỏe mạnh, gặp nhiều may mắn, và em là điều may mắn cụa anh nè Hihi! 💋</p>
+   <p class="big">YÊU ANH NHIỀU ƠI LÀ NHIỀU! 💗</p>
+   <p class="sg">Ký tên: Bé iu của anh 🎀</p>
+   <div style="text-align:center;margin-top:22px"><button class="btn" id="hugBtn">Gửi anh một cái ôm 💗</button></div>
+  </article>
+ </div>
+</section>
+
+<!-- Hình chibi dự phòng khi chưa có images/hug.jpg -->
+<template id="fb"><svg class="hug" viewBox="0 0 300 300" role="img" aria-label="Hai bạn chibi ôm nhau"><rect width="300" height="300" fill="#ffd3df"/><path d="M150 262C50 195 55 105 108 98c26-3 42 15 42 32 0-17 16-35 42-32 53 7 58 97-42 164Z" fill="#ffb3c7"/>
+<rect x="72" y="178" width="70" height="74" rx="22" fill="#f6b6c8"/><rect x="158" y="178" width="70" height="74" rx="22" fill="#8c93b8"/>
+<circle cx="112" cy="140" r="46" fill="#ffe3d2"/><path d="M64 144C60 90 118 76 150 112c-30-8-52 2-62 30Z" fill="#f3d27e"/><circle cx="100" cy="146" r="4.5" fill="#35405e"/><circle cx="126" cy="146" r="4.5" fill="#35405e"/><ellipse cx="92" cy="158" rx="8" ry="5" fill="#ff9fb4"/><ellipse cx="134" cy="158" rx="8" ry="5" fill="#ff9fb4"/>
+<circle cx="190" cy="140" r="46" fill="#ffe0cc"/><path d="M144 138C140 88 200 80 236 112c4 10 4 20 2 30-8-26-30-34-56-26-18 6-30 14-38 22Z" fill="#6b4630"/><circle cx="178" cy="146" r="4.5" fill="#4a2c1a"/><circle cx="204" cy="146" r="4.5" fill="#4a2c1a"/><ellipse cx="170" cy="158" rx="8" ry="5" fill="#ff9fb4"/><ellipse cx="212" cy="158" rx="8" ry="5" fill="#ff9fb4"/>
+<path d="M104 164q8 7 16 0M182 164q8 7 16 0" stroke="#c0504d" stroke-width="2.5" fill="none" stroke-linecap="round"/><text x="22" y="48" font-size="22">✦</text><text x="256" y="60" font-size="18">✧</text></svg></template>
+
+<script>
+const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
+const EMO=['💗','💖','💕','🎀','✨','🌸','🩷'];
+
+// Chân trang cho mọi màn (trừ màn mở đầu)
+$$('.screen:not(#intro) .wrap').forEach(w=>{const f=document.createElement('div');f.className='foot';f.textContent='Made with love, just for my anh iu ♡';w.appendChild(f)});
+
+// Trái tim bay nhẹ ở nền (rất nhẹ, không che nội dung)
+for(let i=0;i<12;i++){const h=document.createElement('span');h.className='fh';h.textContent=['💗','🩷','✨','🎀'][i%4];
+ h.style.cssText=`left:${Math.random()*96}%;font-size:${14+Math.random()*16}px;animation-duration:${9+Math.random()*9}s;animation-delay:${-Math.random()*14}s`;$('#bg').appendChild(h)}
+
+// Bắn tim tại vị trí (x,y)
+function burst(x,y,n=10){for(let i=0;i<n;i++){const s=document.createElement('span');s.className='pop';s.textContent=EMO[Math.random()*EMO.length|0];
+ s.style.left=x+'px';s.style.top=y+'px';s.style.setProperty('--dx',(Math.random()-.5)*170+'px');s.style.setProperty('--dy',-(40+Math.random()*190)+'px');s.style.setProperty('--rot',(Math.random()-.5)*80+'deg');
+ s.style.fontSize=16+Math.random()*16+'px';s.addEventListener('animationend',()=>s.remove());document.body.appendChild(s)}}
+// Chạm vào sticker / tim bất kỳ cũng có hiệu ứng nhỏ
+document.addEventListener('pointerdown',e=>{if(e.target.closest('.stk,.pol,.fh,.letter .stamp')) burst(e.clientX,e.clientY,6)});
+
+// Chuyển màn hình
+let hugTimer;
+function go(id){
+ $$('.screen').forEach(s=>s.classList.toggle('on',s.id===id));
+ $('#'+id).scrollTop=0; clearInterval(hugTimer);
+ if(id==='v1') hugTimer=setInterval(()=>{const x=innerWidth*(.1+Math.random()*.8);burst(x,innerHeight*.95,1)},450);
+ if(id==='v3') resetMail();
+}
+$$('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+
+// Mở quà
+$('#openGift').addEventListener('click',e=>{$('#openGift').disabled=true;$('#env1').classList.add('open');burst(e.clientX,e.clientY,14);setTimeout(()=>go('home'),1700)});
+
+// Nơ số 1: chạm vào hai bạn chibi
+$('#hugbox').addEventListener('click',e=>{const b=$('#hugbox');b.classList.remove('b');void b.offsetWidth;b.classList.add('b');burst(e.clientX,e.clientY,12)});
+
+// Nơ số 3: mở thư
+function openMail(){const env=$('#env3');if(env.classList.contains('open'))return;env.classList.add('open');
+ setTimeout(()=>{$('#mailWrap').style.display='none';$('#letter').classList.add('show');$('#v3').scrollTop=0},1500)}
+function resetMail(){$('#env3').classList.remove('open');$('#mailWrap').style.display='';$('#letter').classList.remove('show')}
+$('#env3').addEventListener('click',openMail);
+$('#env3').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openMail()}});
+$('#hugBtn').addEventListener('click',e=>{const r=e.target.getBoundingClientRect();burst(r.left+r.width/2,r.top,18);setTimeout(()=>burst(r.left+r.width/2,r.top,12),250)});
+</script>
+</body>
+</html>
